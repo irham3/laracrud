@@ -9,13 +9,49 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
-            <!-- Name -->
+            <!-- First Name -->
             <div>
-                <x-input-label for="name" :value="__('Name')" />
+                <x-input-label for="firstname" :value="__('First Name')" />
 
-                <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                <x-text-input id="firstname" class="block mt-1 w-full" type="text" name="firstname" :value="old('firstname')" required autofocus />
 
-                <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                <x-input-error :messages="$errors->get('firstname')" class="mt-2" />
+            </div>
+            
+            <!-- Last Name -->
+            <div>
+                <x-input-label for="lastname" :value="__('Last Name')" />
+
+                <x-text-input id="lastname" class="block mt-1 w-full" type="text" name="lastname" :value="old('lastname')" required autofocus />
+
+                <x-input-error :messages="$errors->get('lastname')" class="mt-2" />
+            </div>
+
+            <!-- Username -->
+            <div>
+                <x-input-label for="username" :value="__('Username')" />
+
+                <x-text-input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')" required autofocus />
+
+                <x-input-error :messages="$errors->get('username')" class="mt-2" />
+            </div>
+
+            <!-- Phone Number -->
+            <div>
+                <x-input-label for="phone" :value="__('Phone Number')" />
+
+                <x-text-input id="phone" class="block mt-1 w-full" type="text" name="phone" :value="old('phone')" required autofocus />
+
+                <x-input-error :messages="$errors->get('phone')" class="mt-2" />
+            </div>
+
+            <!-- Roles -->
+            <div>
+                <x-input-label for="role" :value="__('Roles')" />
+
+                <x-text-input id="role" class="block mt-1 w-full" type="number" name="role" :value="old('role')" required autofocus />
+
+                <x-input-error :messages="$errors->get('role')" class="mt-2" />
             </div>
 
             <!-- Email Address -->
